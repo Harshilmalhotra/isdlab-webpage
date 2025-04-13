@@ -77,7 +77,8 @@ export default function Home() {
 
               <CountUp
                 from={0}
-                to={item.value}
+                to={Number(item?.value) || 0}
+
                 separator=","
                 direction="up"
                 duration={4}
