@@ -1,5 +1,10 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { useTransition, animated } from "@react-spring/web";
+import {
+  useTransition,
+  animated,
+  SpringValue,
+  AnimatedProps,
+} from "@react-spring/web";
 
 interface MasonryItem {
   id: string | number;
@@ -87,29 +92,23 @@ function Masonry({ data }: MasonryProps) {
       className="relative w-full h-full"
       style={{ height: Math.max(...heights) }}
     >
-      {transitions((style, item) => {
-        const AnimatedDiv = animated.div as React.FC<
-          React.HTMLAttributes<HTMLDivElement> & { style: any }
-        >;
-
-        return (
-          <AnimatedDiv
-            key={item.id}
-            style={style}
-            className="absolute p-[15px] [will-change:transform,width,height,opacity]"
-          >
-            <div
-              className="relative w-full h-full overflow-hidden uppercase text-[10px] leading-[10px] rounded-[4px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] transition duration-300 ease hover:scale-110"
-              style={{
-                backgroundColor: "#ffffff",
-                backgroundImage: `url(${item.image})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            />
-          </AnimatedDiv>
-        );
-      })}
+      {transitions((style, item) => (
+        <animated.div
+          key={item.id}
+          style={style as AnimatedProps<React.CSSProperties>}
+          className="absolute p-[15px] [will-change:transform,width,height,opacity]"
+        >
+          <div
+            className="relative w-full h-full overflow-hidden uppercase text-[10px] leading-[10px] rounded-[4px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] transition duration-300 ease hover:scale-110"
+            style={{
+              backgroundColor: "#ffffff",
+              backgroundImage: `url(${item.image})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          />
+        </animated.div>
+      ))}
     </div>
   );
 }
