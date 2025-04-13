@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { useTransition, animated, SpringValue } from "@react-spring/web";
+import { useTransition, animated } from "@react-spring/web";
 
 interface MasonryItem {
   id: string | number;
@@ -30,7 +30,7 @@ function Masonry({ data }: MasonryProps) {
       } else if (window.matchMedia("(min-width: 600px)").matches) {
         setColumns(3);
       } else {
-        setColumns(1); // Mobile devices
+        setColumns(1);
       }
     };
 
@@ -71,16 +71,7 @@ function Masonry({ data }: MasonryProps) {
     return [heights, gridItems];
   }, [columns, data, width]);
 
-  const transitions = useTransition<
-    GridItem,
-    {
-      x: number;
-      y: number;
-      width: number;
-      height: number;
-      opacity: number;
-    }
-  >(gridItems, {
+  const transitions = useTransition(gridItems, {
     keys: (item) => item.id,
     from: ({ x, y, width, height }) => ({ x, y, width, height, opacity: 0 }),
     enter: ({ x, y, width, height }) => ({ x, y, width, height, opacity: 1 }),
@@ -97,16 +88,14 @@ function Masonry({ data }: MasonryProps) {
       style={{ height: Math.max(...heights) }}
     >
       {transitions((style, item) => {
+        const AnimatedDiv = animated.div as React.FC<
+          React.HTMLAttributes<HTMLDivElement> & { style: any }
+        >;
+
         return (
-          <animated.div
+          <AnimatedDiv
             key={item.id}
-            style={style as {
-              x: SpringValue<number>;
-              y: SpringValue<number>;
-              width: SpringValue<number>;
-              height: SpringValue<number>;
-              opacity: SpringValue<number>;
-            }}
+            style={style}
             className="absolute p-[15px] [will-change:transform,width,height,opacity]"
           >
             <div
@@ -118,7 +107,7 @@ function Masonry({ data }: MasonryProps) {
                 backgroundPosition: "center",
               }}
             />
-          </animated.div>
+          </AnimatedDiv>
         );
       })}
     </div>
