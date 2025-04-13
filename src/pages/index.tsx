@@ -61,11 +61,11 @@ export default function Home() {
         {/* Stats Section */}
         <div className="relative z-40 my-10 top-10 h-auto bg-black/40 rounded-3xl shadow-[0_0_20px_10px_rgba(0,0,255,0.5)] px-6 py-8 sm:px-16 lg:px-8 lg:py-6 flex flex-wrap justify-around gap-4 sm:gap-12 lg:gap-6 max-w-6xl w-10/12 sm:w-2/3 mx-auto border border-gray-600">
           {[
-            { label: "Industry Collaborations", value: "15+" },
-            { label: "Projects Completed", value: "23" },
-            { label: "Courses Offered", value: "5" },
-            { label: "Students Benefited", value: "200+" },
-            { label: "Internships Offered", value: "50+" },
+            { label: "Industry Collaborations", value: "15",sign:"+" },
+            { label: "Projects Completed", value: "23",sign:"+" },
+            { label: "Courses Offered", value: "5",sign:"" },
+            { label: "Students Benefited", value: "200",sign:"+" },
+            { label: "Internships Offered", value: "50" ,sign:"+"},
           ].map((item, idx) => (
             <div
               key={idx}
@@ -74,7 +74,7 @@ export default function Home() {
               <h4 className="text-lg sm:text-xl text-white font-semibold mb-2">
                 {item.label}
               </h4>
-
+<div>
               <CountUp
                 from={0}
                 to={Number(item?.value) || 0}
@@ -84,6 +84,8 @@ export default function Home() {
                 duration={4}
                 className="count-up-text text-2xl sm:text-3xl text-blue-500 font-extrabold"
               />
+              <span className="count-up-text text-2xl sm:text-3xl text-blue-500 font-extrabold">{item.sign}</span>
+              </div>
             </div>
           ))}
         </div>
