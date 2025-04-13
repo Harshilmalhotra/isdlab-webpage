@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { useTransition, a } from "@react-spring/web";
-import { animated, useTransition } from "@react-spring/web";
+import { useTransition, animated } from "@react-spring/web"; // Removed 'a'
 
 
 interface MasonryItem {
