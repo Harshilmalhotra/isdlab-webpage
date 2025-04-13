@@ -1,16 +1,33 @@
 @import "tailwindcss";
 
 html, body {
-  background-color: black; /* Set universal background color */
-  color: white; /* Set universal text color */
-
+  @apply bg-black text-white; /* Using Tailwind's @apply instead of direct CSS */
 }
 
 .scrollbar-hidden::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for WebKit browsers */
+  display: none;
 }
 
 .scrollbar-hidden {
-  -ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
-  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes scroll {
+    0% { transform: translateX(0%); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-scroll {
+    animation: scroll 20s linear infinite;
+  }
+
+  .group-hover\:paused {
+    animation-play-state: paused;
+  }
 }

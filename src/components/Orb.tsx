@@ -202,7 +202,7 @@ export default function Orb({
         rot: { value: 0 },
         hoverIntensity: { value: hoverIntensity },
       },
-    });
+    }, [frag, vert]);
 
     const mesh = new Mesh(gl, { geometry, program });
 

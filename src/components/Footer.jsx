@@ -81,7 +81,7 @@ export default function Footer() {
                 <p>Kattankulathur, Chennai - 603203</p>
               </div>
               <div className="space-y-1">
-                <p><span className="font-medium">Email:</span> <a href="mailto:isdlab@srm.edu.in" className="hover:text-blue-400 transition">isdlab@srm.edu.in</a></p>
+                <p><span className="font-medium">Email:</span> <a href="mailto:isdlab@srmist.edu.in" className="hover:text-blue-400 transition">isdlab@srmist.edu.in</a></p>
                 <p><span className="font-medium">Phone:</span> +91 44 2745 XXXX</p>
               </div>
             </address>
@@ -120,7 +120,7 @@ export default function Footer() {
         <div className="text-center text-sm text-gray-400">
           <p>© {currentYear} ISD Lab, SRM University. All rights reserved.</p>
           <p className="mt-4 pt-3 border-t border-gray-800 text-xs text-gray-500">
-            Created and hosted on testserver/aws/ap-south-1/Harshil Malhotra
+            Created and hosted on testserver/azure/ap-south-1/Harshil Malhotra
           </p>
         </div>
       </div>

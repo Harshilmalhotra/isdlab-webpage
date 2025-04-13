@@ -25,27 +25,6 @@ const IMGS: { url: string; text: string }[] = [
     url: "https://images.unsplash.com/photo-1495103033382-fe343886b671?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     text: "Sample Text 4",
   },
-  {
-    url: "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    text: "Sample Text 1",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1506665531195-3566af2b4dfa?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    text: "Sample Text 2",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=3456&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    text: "Sample Text 3",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1495103033382-fe343886b671?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    text: "Sample Text 4",
-  },
-  {
-    url: "https://images.unsplash.com/photo-1528181304800-259b08848526?q=80&w=3870&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    text: "Sample Text 1",
-  },
- 
 ];
 
 const RollingGallery: React.FC = () => {
@@ -53,10 +32,11 @@ const RollingGallery: React.FC = () => {
 
   useEffect(() => {
     const handleResize = () => setIsScreenSizeSm(window.innerWidth <= 640);
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    handleResize(); // Initialize screen size check on mount
+
+    window.addEventListener("resize", handleResize); // Add event listener for window resize
+    return () => window.removeEventListener("resize", handleResize); // Cleanup event listener on unmount
+  }, []); // Empty dependency array, run only once on mount and unmount
 
   const cylinderWidth: number = isScreenSizeSm ? 1100 : 1800;
   const faceCount: number = IMGS.length;
@@ -85,8 +65,7 @@ const RollingGallery: React.FC = () => {
 
   useEffect(() => {
     startInfiniteSpin(rotation.get());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [rotation]); // Add `rotation` as a dependency to ensure infinite spin starts on rotation change
 
   const handleDrag = (_: any, info: PanInfo): void => {
     controls.stop();
@@ -128,7 +107,7 @@ const RollingGallery: React.FC = () => {
               <img
                 src={item.url}
                 alt={`gallery-${i}`}
-                className="pointer-events-none h-[200px] w-[300px] rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105"
+                className="pointer-events-none h-[200px] w-[300px] rounded-[15px] border-[3px] border-white object-cover filter grayscale transition-all duration-300 ease-out group-hover:grayscale-0 group-hover:scale-105"
               />
               <p className="text-white mt-4 text-center">{item.text}</p>
             </div>
