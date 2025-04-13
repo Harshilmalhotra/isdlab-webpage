@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image"; // Import the Image component
 
 export default function Events() {
   const events = [
@@ -33,11 +34,13 @@ export default function Events() {
             className="bg-gray-800 rounded-lg shadow-lg hover:shadow-xl transition-shadow p-4"
           >
             {/* Event Poster */}
-            <div className="w-full h-48 bg-gray-700 rounded-lg overflow-hidden mb-4">
-              <img
+            <div className="w-full h-48 bg-gray-700 rounded-lg overflow-hidden mb-4 relative">
+              <Image
                 src={event.poster}
                 alt={event.title}
-                className="w-full h-full object-cover"
+                layout="fill" // Ensures the image fills the container
+                objectFit="cover" // Ensures the image maintains aspect ratio
+                className="rounded-lg"
               />
             </div>
 
