@@ -1,10 +1,8 @@
-import Squares from '@/components/Squares';
+
 
 // The component will fill the height/width of its parent container. Edit the CSS to change this.
 // The options below are the default values.
 import AutoScrollCards from '@/components/AutoScrollCards';
-
-import HorizontalScroll from '@/components/HorizontalScroll';
 
 
 export default function Maintainence() {

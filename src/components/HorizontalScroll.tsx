@@ -1,6 +1,4 @@
-'use client';
-
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, useCallback } from 'react';
 
 const generateItems = (count: number, offset: number = 0) =>
   Array.from({ length: count }, (_, i) => `Item ${i + offset + 1}`);
@@ -10,11 +8,11 @@ export default function HorizontalScroll() {
   const [offset, setOffset] = useState(10);
   const observerRef = useRef<HTMLDivElement | null>(null);
 
-  const loadMoreItems = () => {
+  const loadMoreItems = useCallback(() => {
     const newItems = generateItems(10, offset);
     setItems((prev) => [...prev, ...newItems]);
     setOffset((prev) => prev + 10);
-  };
+  }, [offset]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -36,7 +34,7 @@ export default function HorizontalScroll() {
     return () => {
       if (current) observer.unobserve(current);
     };
-  }, [items]);
+  }, [loadMoreItems]);
 
   return (
     <div className="w-full overflow-x-auto whitespace-nowrap p-4">
