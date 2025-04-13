@@ -3,7 +3,7 @@ import {
   useTransition,
   animated,
 
-  AnimatedProps,
+
 } from "@react-spring/web";
 
 interface MasonryItem {
