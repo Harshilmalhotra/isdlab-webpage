@@ -1,0 +1,1 @@
+export default function gallery() { return <h1 className='text-2xl p-4'>gallery Page</h1>; }

@@ -1,0 +1,1 @@
+export default function products() { return <h1 className='text-2xl p-4'>products Page</h1>; }

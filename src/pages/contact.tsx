@@ -1,0 +1,1 @@
+export default function contact() { return <h1 className='text-2xl p-4'>contact Page</h1>; }

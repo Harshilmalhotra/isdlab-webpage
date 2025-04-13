@@ -1,0 +1,1 @@
+export default function initiatives() { return <h1 className='text-2xl p-4'>initiatives Page</h1>; }

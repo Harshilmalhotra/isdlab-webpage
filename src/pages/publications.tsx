@@ -1,0 +1,1 @@
+export default function publications() { return <h1 className='text-2xl p-4'>publications Page</h1>; }

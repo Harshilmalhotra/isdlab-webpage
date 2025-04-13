@@ -1,0 +1,1 @@
+export default function events() { return <h1 className='text-2xl p-4'>events Page</h1>; }

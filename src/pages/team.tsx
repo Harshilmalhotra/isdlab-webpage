@@ -1,0 +1,1 @@
+export default function team() { return <h1 className='text-2xl p-4'>team Page</h1>; }
