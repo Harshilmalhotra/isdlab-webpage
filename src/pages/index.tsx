@@ -192,7 +192,7 @@ export default function Home() {
      {/* Left Section: Image */}
 <div className="w-full md:w-1/2">
   <Image
-    src="/smorphiportrait.jpg"
+    src="/smorphiportrait.webp"
     alt="NFT Artwork"
     width={500}
     height={500}
