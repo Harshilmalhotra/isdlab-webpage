@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
-import { useTransition, animated } from "@react-spring/web"; // Removed 'a'
-
+import { useTransition, animated, SpringValue } from "@react-spring/web";
 
 interface MasonryItem {
   id: string | number;
@@ -74,7 +73,13 @@ function Masonry({ data }: MasonryProps) {
 
   const transitions = useTransition<
     GridItem,
-    { x: number; y: number; width: number; height: number; opacity: number }
+    {
+      x: number;
+      y: number;
+      width: number;
+      height: number;
+      opacity: number;
+    }
   >(gridItems, {
     keys: (item) => item.id,
     from: ({ x, y, width, height }) => ({ x, y, width, height, opacity: 0 }),
@@ -91,23 +96,31 @@ function Masonry({ data }: MasonryProps) {
       className="relative w-full h-full"
       style={{ height: Math.max(...heights) }}
     >
-      {transitions((style, item) => (
-        <animated.div
-          key={item.id}
-          style={style}
-          className="absolute p-[15px] [will-change:transform,width,height,opacity]"
-        >
-          <div
-            className="relative w-full h-full overflow-hidden uppercase text-[10px] leading-[10px] rounded-[4px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] transition duration-300 ease hover:scale-110"
-            style={{
-              backgroundColor: "#ffffff",
-              backgroundImage: `url(${item.image})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
+      {transitions((style, item) => {
+        return (
+          <animated.div
+            key={item.id}
+            style={style as {
+              x: SpringValue<number>;
+              y: SpringValue<number>;
+              width: SpringValue<number>;
+              height: SpringValue<number>;
+              opacity: SpringValue<number>;
             }}
-          />
-        </animated.div>
-      ))}
+            className="absolute p-[15px] [will-change:transform,width,height,opacity]"
+          >
+            <div
+              className="relative w-full h-full overflow-hidden uppercase text-[10px] leading-[10px] rounded-[4px] shadow-[0px_10px_50px_-10px_rgba(0,0,0,0.2)] transition duration-300 ease hover:scale-110"
+              style={{
+                backgroundColor: "#ffffff",
+                backgroundImage: `url(${item.image})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            />
+          </animated.div>
+        );
+      })}
     </div>
   );
 }
