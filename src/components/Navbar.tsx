@@ -11,22 +11,21 @@ export default function Navbar() {
   return (
     <nav className="bg-black text-white shadow-md sticky top-0 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center h-16 items-center"> {/* Center contents */}
+        <div className="flex justify-center h-20 items-center"> {/* Increased height */}
           {/* Logo */}
           <div className="flex items-center mr-auto"> {/* Push logo to the left */}
             <Image
               src="/logo.svg" // Path to your logo in the public folder
               alt="ISD Lab Logo"
-              width={40} // Adjust width as needed
-              height={40} // Adjust height as needed
-              className="pr-4" 
-
+              width={60} // Increased width
+              height={60} // Increased height
+              className="pr-4"
             />
-            {/* <span className="text-xl font-bold">ISD Lab</span> */}
+            {/* <span className="text-2xl font-bold">ISD Lab</span> */}
           </div>
 
           {/* Desktop Menu */}
-          <ul className="hidden md:flex gap-6 text-sm font-medium">
+          <ul className="hidden md:flex gap-8 text-base font-medium"> {/* Increased text size */}
             <li><Link href="/">Home</Link></li>
             <li><Link href="/initiatives">Initiatives</Link></li>
             <li><Link href="/team">Team</Link></li>
