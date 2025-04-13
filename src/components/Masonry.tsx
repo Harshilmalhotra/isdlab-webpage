@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useMemo, useRef } from "react";
 import { useTransition, a } from "@react-spring/web";
+import { animated, useTransition } from "@react-spring/web";
+
 
 interface MasonryItem {
   id: string | number;
@@ -91,7 +93,7 @@ function Masonry({ data }: MasonryProps) {
       style={{ height: Math.max(...heights) }}
     >
       {transitions((style, item) => (
-        <a.div
+        <animated.div
           key={item.id}
           style={style}
           className="absolute p-[15px] [will-change:transform,width,height,opacity]"
@@ -105,7 +107,7 @@ function Masonry({ data }: MasonryProps) {
               backgroundPosition: "center",
             }}
           />
-        </a.div>
+        </animated.div>
       ))}
     </div>
   );
