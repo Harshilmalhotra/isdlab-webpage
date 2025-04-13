@@ -11,8 +11,7 @@ export default function Custom404() {
           rotateOnHover={true}
           hue={0}
           forceHoverState={false}
-          text="404" // Add the text you want to display inside the Orb
-          textColor="white" // Set the text color
+          
         />
       </div>
      
