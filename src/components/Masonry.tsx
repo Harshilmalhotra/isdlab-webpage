@@ -2,7 +2,7 @@ import React, { useState, useEffect, useMemo, useRef } from "react";
 import {
   useTransition,
   animated,
-  SpringValue,
+
   AnimatedProps,
 } from "@react-spring/web";
 
