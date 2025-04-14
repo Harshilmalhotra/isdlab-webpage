@@ -1,6 +1,15 @@
 import { useState } from "react";
 
-const newsData = [
+// Define type for a news item
+type NewsItem = {
+  id: number;
+  title: string;
+  date: string;
+  time: string;
+  content: string;
+};
+
+const newsData: NewsItem[] = [
   {
     id: 1,
     title: "AI Workshop Conducted Successfully",
@@ -28,9 +37,9 @@ const newsData = [
 ];
 
 export default function LatestNews() {
-  const [selectedNews, setSelectedNews] = useState(null);
+  const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
 
-  const handleReadMore = (news) => {
+  const handleReadMore = (news: NewsItem) => {
     setSelectedNews(news);
   };
 
