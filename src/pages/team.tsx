@@ -1,8 +1,16 @@
 import Image from "next/image";
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  linkedin: string;
+  website: string;
+};
+
 export default function Team() {
-  const labCoordinators = [
+  const labCoordinators: TeamMember[] = [
     {
       name: "Dr. E Poovammal",
       role: "Lab Coordinator",
@@ -12,7 +20,7 @@ export default function Team() {
     },
   ];
 
-  const labIncharges = [
+  const labIncharges: TeamMember[] = [
     {
       name: "Dr. B Sowmiya",
       role: "Lab Incharge",
@@ -22,7 +30,7 @@ export default function Team() {
     },
   ];
 
-  const labTechnicians = [
+  const labTechnicians: TeamMember[] = [
     {
       name: "Mrs. Sangeeta",
       role: "Lab Technician",
@@ -32,7 +40,7 @@ export default function Team() {
     },
   ];
 
-  const studentTeam = [
+  const studentTeam: TeamMember[] = [
     {
       name: "Shivam Bansal",
       role: "Student Member",
@@ -44,12 +52,12 @@ export default function Team() {
       name: "Harshil Malhotra",
       role: "Student Member",
       image: "/people/Harshil.jpg",
-      linkedin: "https://www.linkedin.com/in/harshil-malhotra",
+      linkedin: "https://www.linkedin.com/in/harshilmalhotra",
       website: "https://harshilmalhotra.com",
     },
   ];
 
-  const renderCard = (person: any, index: number) => (
+  const renderCard = (person: TeamMember, index: number) => (
     <div
       key={index}
       className="flex flex-col items-center bg-black border border-gray-700 p-6 rounded-xl shadow-md hover:shadow-blue-500/40 transition-shadow"
@@ -87,8 +95,8 @@ export default function Team() {
   );
 
   return (
-    <div className="relative z-30 bg-black text-white min-h-screen p-8">
-      <h1 className="text-4xl font-bold text-center mb-4 text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500">
+    <div className="absolute z-30 bg-black text-white min-h-screen p-8 w-full">
+      <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 mb-4 text-center">
         Our Team
       </h1>
       <p className="text-lg text-gray-400 mb-12 text-center">
