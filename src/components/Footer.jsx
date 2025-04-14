@@ -3,9 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 export default function Footer() {
-  // Current year for copyright
   const currentYear = new Date().getFullYear();
-  
+
   return (
     <footer className="bg-gradient-to-t from-[#18164f] to-black text-white pt-12 pb-4">
       <div className="container mx-auto px-4">
@@ -16,67 +15,66 @@ export default function Footer() {
             <div className="flex flex-col space-y-6">
               {/* ISD Lab Logo */}
               <div className="mb-4">
-               
-                {/* <div className="h-16 w-40 relative bg-gray-800 flex items-center justify-center rounded"> */}
-                  <Image
-                    src="/logo.svg"
-                    alt="ISD Lab Logo"
-                    width={120}
-                    height={48}
-                    className="max-h-20 w-auto"
-                  />
-                {/* </div> */}
+                <Image
+                  src="/logo.svg"
+                  alt="ISD Lab Logo"
+                  width={120}
+                  height={48}
+                  className="max-h-20 w-auto"
+                />
               </div>
-              
+
               {/* SRM Logo */}
               <div>
-                
-               
-                  <Image
-                    src="/srmlogowhite.png"
-                    alt="SRM University Logo"
-                    width={500}
-                    height={120}
-                    className="max-h-20 w-auto"
-                  />
-            
+                <Image
+                  src="/srmlogowhite.png"
+                  alt="SRM University Logo"
+                  width={500}
+                  height={120}
+                  className="max-h-20 w-auto"
+                />
               </div>
             </div>
           </div>
-          
+
           {/* Quick Links */}
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Quick Links</h3>
             <ul className="space-y-2">
               <li><Link href="/" className="hover:text-blue-400 transition">Home</Link></li>
               <li><Link href="/about" className="hover:text-blue-400 transition">About Us</Link></li>
-              <li><Link href="/research" className="hover:text-blue-400 transition">Research</Link></li>
-              <li><Link href="/publications" className="hover:text-blue-400 transition">Publications</Link></li>
+              <li><Link href="/initiatives" className="hover:text-blue-400 transition">Initiatives</Link></li>
               <li><Link href="/team" className="hover:text-blue-400 transition">Team</Link></li>
-              <li><Link href="/contact" className="hover:text-blue-400 transition">Contact</Link></li>
+              <li><Link href="/publications" className="hover:text-blue-400 transition">Publications</Link></li>
+              <li><Link href="/events" className="hover:text-blue-400 transition">Events</Link></li>
+              <li><Link href="/latest-news" className="hover:text-blue-400 transition">Latest News</Link></li>
+              <li><Link href="/gallery" className="hover:text-blue-400 transition">Gallery</Link></li>
+              <li><Link href="/contact" className="hover:text-blue-400 transition">Contact Us</Link></li>
             </ul>
           </div>
-          
+
           {/* Research Areas */}
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Research Areas</h3>
-            <ul className="space-y-2">
-              <li><Link href="/research/ai" className="hover:text-blue-400 transition">Artificial Intelligence</Link></li>
-              <li><Link href="/research/ml" className="hover:text-blue-400 transition">Machine Learning</Link></li>
-              <li><Link href="/research/big-data" className="hover:text-blue-400 transition">Big Data Analytics</Link></li>
-              <li><Link href="/research/iot" className="hover:text-blue-400 transition">Internet of Things</Link></li>
-              <li><Link href="/research/cybersecurity" className="hover:text-blue-400 transition">Cybersecurity</Link></li>
+            <ul class="space-y-1">
+              <li>Artificial Intelligence</li>
+              <li>Machine Learning</li>
+              <li>Computer Vision</li>
+              <li>Robotics & Automation</li>
+              <li>Embedded Systems</li>
+              <li>Internet of Things (IoT)</li>
+              <li>Human-Robot Interaction</li>
             </ul>
           </div>
-          
+
           {/* Contact Information */}
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Contact Us</h3>
             <address className="not-italic">
               <div className="mb-3">
-                <p className="font-medium">ISD Lab</p>
+                <p className="font-extrabold">Intelligent Systems Design Lab</p>
                 <p>Tech Park Annexure 1 Room1509</p>
-                <p>Department of Computer Technologiees</p>
+                <p>Department of Computer Technologies</p>
                 <p>SRM Institute of Science and Technology</p>
                 <p>Kattankulathur, Chennai - 603203</p>
               </div>
@@ -87,7 +85,7 @@ export default function Footer() {
             </address>
           </div>
         </div>
-        
+
         {/* Social media links */}
         <div className="flex justify-center space-x-6 py-6 border-t border-b border-gray-800 mb-6">
           <a href="https://twitter.com/isdlab" className="text-gray-400 hover:text-white transition">
@@ -115,7 +113,7 @@ export default function Footer() {
             </svg>
           </a>
         </div>
-        
+
         {/* Copyright and credits section */}
         <div className="text-center text-sm text-gray-400">
           <p>© {currentYear} ISD Lab, SRM University. All rights reserved.</p>
