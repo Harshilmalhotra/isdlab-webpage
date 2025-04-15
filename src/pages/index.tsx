@@ -251,12 +251,7 @@ export default function Home() {
       Our Success Stories
     </h2>
     <p className="text-gray-300 text-base sm:text-xl mt-4 mb-10 text-justify">
-      We complement the existing higher education system Project Based Learning
-      – i.e. “Learn by Doing”. We train students, teachers, and institutions by
-      establishing an innovation culture tasked with solving real problems
-      using technology. We build e-Yantra labs in colleges to facilitate
-      training and to connect students and teachers to a wider innovation
-      community served by e-Yantra.
+      We believe in “Learn by Doing” through real-world, tech-driven projects. In collaboration with industry partners, we offer specialized training in PCB Design, IoT Prototyping, and Embedded Systems. With Weefa Robotics, students gain hands-on experience with the Smorphi robot, enhancing their skills in modular robotics and intelligent systems.
     </p>
   </div>
 
