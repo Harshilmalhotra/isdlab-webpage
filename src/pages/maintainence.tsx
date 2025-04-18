@@ -8,7 +8,7 @@ export default function Maintainence() {
   const [pin, setPin] = useState("");
   const [shake, setShake] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const pinInputRef = useRef(null);
+  const pinInputRef = useRef<HTMLInputElement>(null); // Explicitly define the type
   const router = useRouter();
 
   useEffect(() => {
