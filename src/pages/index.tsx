@@ -1,5 +1,5 @@
 import Image from 'next/image';  // Import Image component from next/image
-import Head from 'next/head';
+
 import CountUp from '@/components/CountUp'
 import Squares from '@/components/Squares';
 import AutoScrollCards from '@/components/AutoScrollCards';
