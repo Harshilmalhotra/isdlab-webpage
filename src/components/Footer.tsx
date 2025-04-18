@@ -24,6 +24,17 @@ export default function Footer() {
                 />
               </div>
 
+              <div className="mb-4">
+                <Image
+                  src="/ctech_logo.png"
+                  alt="CTECH LOGO"
+                  width={140}
+                  height={80}
+                  className="max-h-20 w-auto"
+                />
+              </div>
+
+
               {/* SRM Logo */}
               <div>
                 <Image
@@ -56,7 +67,7 @@ export default function Footer() {
           {/* Research Areas */}
           <div className="col-span-1">
             <h3 className="text-lg font-semibold mb-4 border-b border-gray-700 pb-2">Research Areas</h3>
-            <ul class="space-y-1">
+            <ul className="space-y-1">
               <li>Artificial Intelligence</li>
               <li>Machine Learning</li>
               <li>Computer Vision</li>
@@ -116,9 +127,16 @@ export default function Footer() {
 
         {/* Copyright and credits section */}
         <div className="text-center text-sm text-gray-400">
-          <p>© {currentYear} ISD Lab, SRM University. All rights reserved.</p>
-          <p className="mt-4 pt-3 border-t border-gray-800 text-xs text-gray-500">
-            Created and hosted on testserver/azure/ap-south-1/Harshil Malhotra
+          <p>© {currentYear} ISD Lab, SRM Institute of Scoence and Technology, Kattankulathur. All rights reserved.</p>
+          <p className="mt-4 pt-3 border-t border-gray-800 text-s text-gray-500">
+            <a
+              href="https://www.linkedin.com/in/harshilmalhotra/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-blue-400 transition"
+            >
+              Created and hosted on testserver/azure/ap-south-1/Harshil Malhotra
+            </a>
           </p>
         </div>
       </div>

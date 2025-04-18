@@ -1,5 +1,5 @@
 import Image from 'next/image';  // Import Image component from next/image
-
+import Head from 'next/head';
 import CountUp from '@/components/CountUp'
 import Squares from '@/components/Squares';
 import AutoScrollCards from '@/components/AutoScrollCards';
@@ -7,6 +7,11 @@ import AutoScrollCards from '@/components/AutoScrollCards';
 
 export default function Home() {
   return (
+    <>
+    
+   
+
+
     <div
       className="bg-black text-white font-sans"
       style={{
@@ -274,5 +279,7 @@ export default function Home() {
 
 
     </div>
+
+    </>
   );
 }
