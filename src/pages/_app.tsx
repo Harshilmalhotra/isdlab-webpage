@@ -2,11 +2,29 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+
+  useEffect(() => {
+    const handleShortcut = (e: KeyboardEvent) => {
+      console.log(`Key pressed: ${e.key}, Code: ${e.code}, Ctrl: ${e.ctrlKey}, Alt: ${e.altKey}`);
+  
+      // Use e.code to detect the actual physical "M" key (ignores diacritics)
+      if (e.ctrlKey && e.altKey && e.code === "KeyM") {
+        e.preventDefault();
+        console.log("Navigating to /maintainence...");
+        router.push("/maintainence");
+      }
+    };
+  
+    window.addEventListener("keydown", handleShortcut);
+    return () => window.removeEventListener("keydown", handleShortcut);
+  }, [router]);
+  
 
   return (
     <>
