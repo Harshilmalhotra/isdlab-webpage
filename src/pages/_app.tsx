@@ -2,32 +2,56 @@ import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import { useRouter } from "next/router";
 import { AnimatePresence, motion } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
+    const hasSeenPopup = localStorage.getItem("maintenancePopupShown");
+    if (!hasSeenPopup) {
+      setShowPopup(true);
+    }
+
     const handleShortcut = (e: KeyboardEvent) => {
-      console.log(`Key pressed: ${e.key}, Code: ${e.code}, Ctrl: ${e.ctrlKey}, Alt: ${e.altKey}`);
-  
-      // Use e.code to detect the actual physical "M" key (ignores diacritics)
       if (e.ctrlKey && e.altKey && e.code === "KeyM") {
         e.preventDefault();
-        console.log("Navigating to /maintainence...");
         router.push("/maintainence");
       }
     };
-  
+
     window.addEventListener("keydown", handleShortcut);
     return () => window.removeEventListener("keydown", handleShortcut);
   }, [router]);
-  
+
+  const handleClosePopup = () => {
+    localStorage.setItem("maintenancePopupShown", "true");
+    setShowPopup(false);
+  };
 
   return (
     <>
+      {showPopup && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
+          <div className="bg-[#0f0f0f] border border-blue-500 max-w-md mx-auto p-6 rounded-2xl shadow-2xl text-center space-y-4 animate-fade-in">
+            <h2 className="text-2xl font-extrabold text-blue-500">Scheduled Maintenance</h2>
+            <p className="text-gray-300 text-sm leading-relaxed">
+              We are currently in the process of upgrading our infrastructure and transitioning servers to enhance your experience. Temporary downtimes may occur. Your patience is truly appreciated as we strive for a smoother, faster future.
+            </p>
+            <button
+              onClick={handleClosePopup}
+              className="bg-blue-500 hover:bg-blue-600 text-white font-medium px-6 py-2 rounded-xl transition-all duration-300 shadow-md"
+            >
+              Continue
+            </button>
+          </div>
+        </div>
+      )}
+
+
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -45,6 +69,7 @@ export default function App({ Component, pageProps }: AppProps) {
     </>
   );
 }
+
 
 
 //MOBILE RESTRICTIONS
