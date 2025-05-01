@@ -1,5 +1,4 @@
-import Image from 'next/image';  // Import Image component from next/image
-
+import Image from 'next/image';  
 import CountUp from '@/components/CountUp'
 import Squares from '@/components/Squares';
 import AutoScrollCards from '@/components/AutoScrollCards';
@@ -7,17 +6,13 @@ import AutoScrollCards from '@/components/AutoScrollCards';
 
 export default function Home() {
   return (
-    <>
-    
-   
-
-
+    <>     
     <div
       className="bg-black text-white font-sans"
       style={{
         overflowY: "scroll",
-        msOverflowStyle: "none", // IE and Edge
-        scrollbarWidth: "none", // Firefox
+        msOverflowStyle: "none", 
+        scrollbarWidth: "none", 
       }}
     >
       {/* Hero Section */}
