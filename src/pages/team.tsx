@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
-import Squares from '@/components/Squares';
 import { motion } from "framer-motion";
 
 type TeamMember = {
@@ -127,7 +126,7 @@ const renderCard = (person: TeamMember, index: number) => (
   >
     <div className="relative h-40 w-40 mb-4">
       <Image
-        src={person.image}
+        src={person.image || "/default-profile.jpg"}
         alt={person.name}
         layout="fill"
         objectFit="cover"
