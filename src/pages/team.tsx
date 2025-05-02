@@ -2,6 +2,7 @@ import Image from "next/image";
 import { FaLinkedin, FaGlobe } from "react-icons/fa";
 import { FaEnvelope } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaGithub } from "react-icons/fa";
 
 type TeamMember = {
   id?: number;
@@ -56,8 +57,9 @@ export default function Team() {
       role: "President",
       email: "sb2368@srmist.edu.in",
       image: "/people/100.jpg",
-      linkedin: "https://www.linkedin.com/in/shivam-bansal",
-      website: "https://shivambansal.com",
+      linkedin: "https://www.linkedin.com/in/shivambansal007/",
+      github: "https://github.com/ShivamBansal07",
+      // website: "https://shivambansal.com",
     },
   ];
 
@@ -113,155 +115,144 @@ export default function Team() {
     },
   ];
 
-  
 
-const renderCard = (person: TeamMember, index: number) => (
-  <motion.div
-    key={index}
-    className="flex flex-col items-center bg-black border border-gray-700 p-6 rounded-xl shadow-md hover:shadow-blue-500/40 transition-shadow"
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.4, delay: index * 0.1 }}
-    whileHover={{ scale: 1.05 }}
-  >
-    <div className="relative h-40 w-40 mb-4">
-      <Image
-        src={person.image || "/default-profile.jpg"}
-        alt={person.name}
-        layout="fill"
-        objectFit="cover"
-        className="rounded-full border-4 border-gray-700"
-      />
-    </div>
 
-    <h3 className="text-xl font-medium">{person.name}</h3>
-    <p className="text-gray-400">{person.role}</p>
+  const renderCard = (person: TeamMember, index: number) => (
+    <motion.div
+      key={index}
+      className="flex flex-col items-center bg-black border border-gray-700 p-6 rounded-xl shadow-md hover:shadow-blue-500/40 transition-shadow"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+      whileHover={{ scale: 1.05 }}
+    >
+      <div className="relative h-40 w-40 mb-4">
+        <Image
+          src={person.image || "/default-profile.jpg"}
+          alt={person.name}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-full border-4 border-gray-700"
+        />
+      </div>
 
-    <div className="flex gap-4 mt-4 text-xl">
-      {person.email && (
-        <a
-          href={`mailto:${person.email}`}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:text-blue-400"
-          title={person.email}
-        >
-          <FaEnvelope />
-        </a>
-      )}
-      {person.linkedin && (
-        <a
-          href={person.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:text-blue-400"
-        >
-          <FaLinkedin />
-        </a>
-      )}
-      {person.website && (
-        <a
-          href={person.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-500 hover:text-blue-400"
-        >
-          <FaGlobe />
-        </a>
-      )}
-      {person.github && (
-        <a
-          href={person.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-white hover:text-gray-300"
-        >
-          <svg
-            fill="currentColor"
-            viewBox="0 0 16 16"
-            className="w-5 h-5"
-            aria-hidden="true"
-          >
-            <path d="..." />
-          </svg>
-        </a>
-      )}
-    </div>
+      <h3 className="text-xl font-medium">{person.name}</h3>
+      <p className="text-gray-400">{person.role}</p>
 
-    {person.otherLinks && person.otherLinks.length > 0 && (
-      <div className="flex flex-col items-center mt-3 text-sm space-y-1">
-        {person.otherLinks.map((link, i) => (
+      <div className="flex gap-4 mt-4 text-xl">
+        {person.email && (
           <a
-            key={i}
-            href={link}
+            href={`mailto:${person.email}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-blue-400 hover:underline break-all"
+            className="text-blue-500 hover:text-blue-400"
+            title={person.email}
           >
-            Other Link {i + 1}
+            <FaEnvelope />
           </a>
-        ))}
+        )}
+        {person.linkedin && (
+          <a
+            href={person.linkedin}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-400"
+          >
+            <FaLinkedin />
+          </a>
+        )}
+        {person.website && (
+          <a
+            href={person.website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:text-blue-400"
+          >
+            <FaGlobe />
+          </a>
+        )}
+        {person.github && (
+          <a
+            href={person.github}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-gray-300"
+          >
+            <FaGithub className="w-5 h-5" />
+          </a>
+        )}
       </div>
-    )}
-  </motion.div>
-);
 
-
-
-return (
-  <div className="relative w-full min-h-screen overflow-hidden">
-    {/* Animated Gradient Background */}
-    <div className="absolute inset-0 -z-10 animate-gradient bg-[linear-gradient(270deg,_#0f0c29,_#302b63,_#24243e)] bg-[length:400%_400%]" />
-
-    {/* Main Content */}
-    <div className="relative z-30 text-white min-h-screen p-8 w-full">
-      <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 mb-4 text-center">
-        Our Team
-      </h1>
-      <p className="text-lg text-gray-400 mb-12 text-center">
-        An incredible team of amazing individuals
-      </p>
-
-      {/* Lab Coordinator */}
-      <section className="mb-12 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Lab Coordinator</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {labCoordinators.map(renderCard)}
+      {person.otherLinks && person.otherLinks.length > 0 && (
+        <div className="flex flex-col items-center mt-3 text-sm space-y-1">
+          {person.otherLinks.map((link, i) => (
+            <a
+              key={i}
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:underline break-all"
+            >
+              Other Link {i + 1}
+            </a>
+          ))}
         </div>
-      </section>
+      )}
+    </motion.div>
+  );
 
-      {/* Lab Incharge */}
-      <section className="mb-12 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Lab Incharge</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {labIncharges.map(renderCard)}
-        </div>
-      </section>
 
-      {/* Lab Technician */}
-      <section className="mb-12 text-center">
-        <h2 className="text-3xl font-semibold mb-6">Lab Technician</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {labTechnicians.map(renderCard)}
-        </div>
-      </section>
 
-      {/* President Team */}
-      <section className="mb-12 text-center">
-        <h2 className="text-3xl font-semibold mb-6">President</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {presidentTeam.map(renderCard)}
-        </div>
-      </section>
+  return (
+    <div className="relative w-full min-h-screen overflow-hidden">
+      {/* Main Content */}
+      <div className="relative z-30 text-white min-h-screen p-8 w-full">
+        <h1 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 mb-4 text-center">
+          Our Team
+        </h1>
+        <p className="text-lg text-gray-400 mb-12 text-center">
+          An incredible team of amazing individuals
+        </p>
 
-      {/* Student Team */}
-      <section className="text-center">
-        <h2 className="text-3xl font-semibold mb-6">Student Team</h2>
-        <div className="flex flex-wrap justify-center gap-8">
-          {studentTeam.map(renderCard)}
-        </div>
-      </section>
+        {/* Lab Coordinator */}
+        <section className="mb-12 text-center">
+          <h2 className="text-3xl font-semibold mb-6">Lab Coordinator</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            {labCoordinators.map(renderCard)}
+          </div>
+        </section>
+
+        {/* Lab Incharge */}
+        <section className="mb-12 text-center">
+          <h2 className="text-3xl font-semibold mb-6">Lab Incharge</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            {labIncharges.map(renderCard)}
+          </div>
+        </section>
+
+        {/* Lab Technician */}
+        <section className="mb-12 text-center">
+          <h2 className="text-3xl font-semibold mb-6">Lab Technician</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            {labTechnicians.map(renderCard)}
+          </div>
+        </section>
+
+        {/* President Team */}
+        <section className="mb-12 text-center">
+          <h2 className="text-3xl font-semibold mb-6">President</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            {presidentTeam.map(renderCard)}
+          </div>
+        </section>
+
+        {/* Student Team */}
+        <section className="text-center">
+          <h2 className="text-3xl font-semibold mb-6">Student Team</h2>
+          <div className="flex flex-wrap justify-center gap-8">
+            {studentTeam.map(renderCard)}
+          </div>
+        </section>
+      </div>
     </div>
-  </div>
-);
-}
+  );}
