@@ -30,7 +30,7 @@ export default function Navbar() {
             <li><Link href="/">Home</Link></li>
             <li><Link href="/initiatives">Initiatives</Link></li>
             <li><Link href="/team">Team</Link></li>
-            <li><Link href="/publications">Publications</Link></li>
+            {/* <li><Link href="/publications">Publications</Link></li> */}
             <li><Link href="/events">Events</Link></li>
             <li><Link href="/latest-news">Latest News</Link></li>
             <li><Link href="/gallery">Gallery</Link></li>
@@ -49,7 +49,7 @@ export default function Navbar() {
             <li><Link href="/" onClick={() => setIsOpen(false)}>Home</Link></li>
             <li><Link href="/initiatives" onClick={() => setIsOpen(false)}>Initiatives</Link></li>
             <li><Link href="/team" onClick={() => setIsOpen(false)}>Team</Link></li>
-            <li><Link href="/publications" onClick={() => setIsOpen(false)}>Publications</Link></li>
+            {/* <li><Link href="/publications" onClick={() => setIsOpen(false)}>Publications</Link></li> */}
             <li><Link href="/events" onClick={() => setIsOpen(false)}>Events</Link></li>
             <li><Link href="/latest-news" onClick={() => setIsOpen(false)}>Latest News</Link></li>
             <li><Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>

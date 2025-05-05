@@ -6,7 +6,7 @@ export default function Document() {
       <Head>
         {/* Meta Tags for SEO */}
         <meta charSet="UTF-8" />
-               <meta
+        <meta
           name="description"
           content="ISD Lab is a robotics and embedded systems research lab focused on AI, IoT, and hands-on innovation through industry collaborations."
         />
@@ -17,12 +17,9 @@ export default function Document() {
         <link rel="icon" type="image/png" sizes="32x32" href="/logo.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/logo.png" />
 
-
-
-        {/* Optional: Font & Theme Color */}
         <meta name="theme-color" content="#0f172a" />
       </Head>
-      <body className="antialiased">
+      <body>
         <Main />
         <NextScript />
       </body>

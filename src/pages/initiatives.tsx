@@ -1,8 +1,9 @@
-import { useRef, useState } from "react";
-import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
+import Image from "next/image"; // Keep the import as we will use it
 
 export default function IndustryCoursesPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [offsetY, setOffsetY] = useState(0);
 
   const courses = [
     {
@@ -14,6 +15,7 @@ export default function IndustryCoursesPage() {
         "/initiatives/pcb1.jpg",
         "/initiatives/pcb2.jpg",
         "/initiatives/pcb3.jpg",
+        "/initiatives/hero.jpg",
       ],
     },
     {
@@ -38,42 +40,45 @@ export default function IndustryCoursesPage() {
     }
   };
 
+  const handleScroll = () => {
+    setOffsetY(window.scrollY);
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="bg-black text-white min-h-screen scroll-smooth">
+    <div className="relative bg-black text-white min-h-screen scroll-smooth">
+      {/* Background Image with Parallax */}
+      <div
+        className="absolute inset-0 -z-10"
+        style={{
+          backgroundImage: "url('/initiatives/ini2.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: `center ${offsetY * 0.5}px`, // Parallax effect
+        }}
+      />
 
-
-      
+      {/* Main Content */}
       <section className="relative h-[90vh] sm:h-[95vh] flex flex-col justify-center items-center text-center px-6 sm:px-12">
-  {/* Background Image */}
- 
-  <div className="absolute inset-0 -z-10">
-  <Image
-    src="/initiatives/hero.jpg"
-    alt="Initiatives Background"
-    fill
-    style={{ objectFit: "cover" }}
-    priority
-  />
-</div>
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
 
+        {/* Content */}
+        <div className="relative z-10 max-w-3xl">
+          <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 drop-shadow-md">
+            Initiatives
+          </h1>
+          <p className="text-lg sm:text-xl text-gray-300">
+            Explore our industry-collaborative programs bridging academia with real-world innovation.
+            From embedded systems and PCB design to cloud-native development—equip yourself with in-demand skills.
+          </p>
+        </div>
+      </section>
 
-
-  {/* Overlay */}
-  <div className="absolute inset-0 bg-black  bg-opacity-60 z-0" />
-
-  {/* Content */}
-  <div className="relative z-10 max-w-3xl">
-    <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 drop-shadow-md">
-      Initiatives
-    </h1>
-    <p className="text-lg sm:text-xl text-gray-300">
-      Explore our industry-collaborative programs bridging academia with real-world innovation.
-      From embedded systems and PCB design to cloud-native development—equip yourself with in-demand skills.
-    </p>
-  </div>
-</section>
-
-<nav className="sticky top-15 bg-black z-50 shadow-md border-b border-gray-700">
+      <nav className="sticky top-15 bg-black z-50 shadow-md border-b border-gray-700">
         <ul className="flex justify-center space-x-6 py-4 mt-2">
           {courses.map((course) => (
             <li key={course.id}>
@@ -87,7 +92,6 @@ export default function IndustryCoursesPage() {
           ))}
         </ul>
       </nav>
-
 
       <style jsx global>{`
         html {
@@ -117,22 +121,24 @@ export default function IndustryCoursesPage() {
                 </button>
               )}
 
-<div
-  ref={(el) => {
-    scrollContainerRefs.current[course.id] = el;
-  }}
-  className={`flex gap-4 flex-wrap ${
-    showArrows ? "overflow-x-auto" : "overflow-x-visible"
-  } no-scrollbar scroll-smooth px-2`}
->
+              <div
+                ref={(el) => {
+                  scrollContainerRefs.current[course.id] = el;
+                }}
+                className={`flex gap-4 flex-wrap ${
+                  showArrows ? "overflow-x-auto" : "overflow-x-visible"
+                } no-scrollbar scroll-smooth px-2`}
+              >
                 {course.images.map((imgSrc, i) => (
-                  <img
-                    key={i}
-                    src={imgSrc}
-                    alt={`${course.title} image ${i + 1}`}
-                    className="rounded-lg w-full sm:w-[calc(50%-1rem)] md:w-[calc(33.333%-1rem)] lg:w-[calc(25%-1rem)] h-40 object-cover shadow-md cursor-zoom-in transition-transform duration-200 hover:scale-105"
-                    onClick={() => setSelectedImage(imgSrc)}
-                  />
+                  <div key={i} className="relative w-40 h-40 sm:w-60 sm:h-60">
+                    <Image
+                      src={imgSrc}
+                      alt={`${course.title} image ${i + 1}`}
+                      fill
+                      className="rounded-lg object-cover shadow-md cursor-zoom-in transition-transform duration-200 hover:scale-105"
+                      onClick={() => setSelectedImage(imgSrc)}
+                    />
+                  </div>
                 ))}
               </div>
 
@@ -155,24 +161,15 @@ export default function IndustryCoursesPage() {
           className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
           onClick={() => setSelectedImage(null)}
         >
-          <img
+          <Image
             src={selectedImage}
             alt="Zoomed"
+            width={1000}
+            height={1000}
             className="max-w-[90%] max-h-[90%] object-contain cursor-zoom-out"
           />
         </div>
       )}
-
-<div className="absolute inset-0 -z-10 bg-gray-900">
-  <Image
-    src="/initiatives/hero.jpg"
-    alt="Initiatives Background"
-    layout="fill"
-    objectFit="cover"
-    priority
-  />
-</div>
-    
     </div>
   );
 }

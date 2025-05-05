@@ -17,6 +17,10 @@ html, body {
 @tailwind components;
 @tailwind utilities;
 
+
+@import "preline/variants.css";
+@source "../node_modules/preline/dist/*.js";
+
 @layer utilities {
   @keyframes scroll {
     0% { transform: translateX(0%); }
@@ -70,4 +74,14 @@ html {
 .no-scrollbar {
   -ms-overflow-style: none;
   scrollbar-width: none;
+}
+
+
+/* Custom styling for carousel dots */
+.slick-dots li button:before {
+  color: #fff; /* Dots color */
+}
+
+.slick-prev, .slick-next {
+  color: #fff; /* Arrow color */
 }

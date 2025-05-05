@@ -1,0 +1,24 @@
+[
+    {
+      "id": "robostim-1",
+      "title": "ROBOSTIM 1.0 Workshop",
+      "date": "2023-11-09",
+      "location": "Intelligent System Design Lab, TP1509, SRMIST",
+      "shortDescription": "A hands-on robotics workshop for 1st-year Computing Technologies students at SRMIST.",
+      "coverImage": "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/main/events/event1/cover.jpg",
+      "gallery": [
+        "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/main/events/event1/1.png",
+        "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/main/events/event1/2.png",
+        "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/main/events/event1/3.png",
+        "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/main/events/event1/4.png",
+        "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/main/events/event1/5.png"
+      ],
+      "content": [
+        "The Department of Computing Technologies organized the ROBOSTIM 1.0 Workshop on 9th November 2023 at the Intelligent System Design Lab TP1509. It was attended by 1st-year students from the Computing Technologies department.",
+        "The workshop began with an introductory session by Dr. E. Poovammal, who explained the lab's vision and objectives. Mr. Thirumalazhagan from SiGe Tech conducted the next session, covering the components used in robotics and demonstrating the DOFBOT robotic arm.",
+        "Trained students Mr. Shivam Bansal and Mr. Kavin Sundareswaran (2nd year CTECH) then led a TINKER CAD simulation session, helping students prototype their ideas virtually before implementing them physically. The event concluded with team activities where students simulated and implemented basic robotic setups."
+      ],
+      "mapLink": "https://maps.app.goo.gl/5JjrcoDtyzmg6jg77"
+    }
+  ]
+  
