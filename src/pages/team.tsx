@@ -130,9 +130,8 @@ export default function Team() {
         <Image
           src={person.image || "/default-profile.jpg"}
           alt={person.name}
-          layout="fill"
-          objectFit="cover"
-          className="rounded-full border-4 border-gray-700"
+          fill 
+          className="rounded-full border-4 border-gray-700 object-cover" 
         />
       </div>
 
@@ -255,4 +254,5 @@ export default function Team() {
         </section>
       </div>
     </div>
-  );}
+  );
+}

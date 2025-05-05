@@ -58,3 +58,16 @@ html, body {
 .animate-fade-in {
   animation: fade-in 0.4s ease-out forwards;
 }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Match navbar height */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

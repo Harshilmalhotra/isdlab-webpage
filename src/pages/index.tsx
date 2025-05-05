@@ -19,7 +19,7 @@ export default function Home() {
       <div className="h-screen relative overflow-visible">
         
         <main className="h-full flex flex-col items-center justify-center text-center px-6 py-12 z-20 relative">
-          <h1 className="text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 absolute top-50 z-20">
+          <h1 className="text-4xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-500 to-blue-500 absolute top-50 z-20 h-20">
             Intelligent Systems Design LAB
           </h1>
           <p className="max-w-xl mt-4 text-gray-300 absolute top-70 lg:top-70 z-20">
