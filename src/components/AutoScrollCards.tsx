@@ -1,4 +1,7 @@
+
 'use client';
+
+import Image from 'next/image';
 
 import { useRef, useEffect, useState } from 'react';
 
@@ -93,10 +96,15 @@ export default function AutoScrollCards() {
               key={i}
               className="flex flex-col items-center justify-center w-64 shrink-0 bg-black hover:bg-black/70 backdrop-blur-lg rounded-2xl p-4 shadow-md transition duration-300"
             >
-              <img
+              <Image
                 src={item.src}
                 alt={item.title}
+                width={256}
+                height={160}
                 className="w-full h-40 object-cover rounded-xl mb-2"
+                style={{ width: '100%', height: '160px', objectFit: 'cover' }}
+                priority={i < 2}
+                unoptimized={item.src.startsWith('http')}
               />
               <h3 className="text-center text-lg font-semibold text-white">
                 {item.title}
