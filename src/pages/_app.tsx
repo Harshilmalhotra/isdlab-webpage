@@ -12,11 +12,11 @@ export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
   // const [showPopup, setShowPopup] = useState(false);
 
-  // useEffect(() => {
-  //   const hasSeenPopup = localStorage.getItem("maintenancePopupShown");
-  //   if (!hasSeenPopup) {
-  //     setShowPopup(true);
-  //   }
+  useEffect(() => {
+    // const hasSeenPopup = localStorage.getItem("maintenancePopupShown");
+    // if (!hasSeenPopup) {
+    //   setShowPopup(true);
+    // }
 
     const handleShortcut = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.altKey && e.code === "KeyM") {
