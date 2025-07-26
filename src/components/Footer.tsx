@@ -91,7 +91,7 @@ export default function Footer() {
               </div>
               <div className="space-y-1">
                 <p><span className="font-medium">Email:</span> <a href="mailto:isdlab@srmist.edu.in" className="hover:text-blue-400 transition">isdlab@srmist.edu.in</a></p>
-                <p><span className="font-medium">Phone:</span> +91 44 2745 XXXX</p>
+                <p><span className="font-medium">Phone:</span> +91 90033 22060</p>
               </div>
             </address>
           </div>

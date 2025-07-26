@@ -10,13 +10,13 @@ import Footer from "@/components/Footer";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
-  const [showPopup, setShowPopup] = useState(false);
+  // const [showPopup, setShowPopup] = useState(false);
 
-  useEffect(() => {
-    const hasSeenPopup = localStorage.getItem("maintenancePopupShown");
-    if (!hasSeenPopup) {
-      setShowPopup(true);
-    }
+  // useEffect(() => {
+  //   const hasSeenPopup = localStorage.getItem("maintenancePopupShown");
+  //   if (!hasSeenPopup) {
+  //     setShowPopup(true);
+  //   }
 
     const handleShortcut = (e: KeyboardEvent) => {
       if (e.ctrlKey && e.altKey && e.code === "KeyM") {
@@ -29,14 +29,14 @@ export default function App({ Component, pageProps }: AppProps) {
     return () => window.removeEventListener("keydown", handleShortcut);
   }, [router]);
 
-  const handleClosePopup = () => {
-    localStorage.setItem("maintenancePopupShown", "true");
-    setShowPopup(false);
-  };
+  // const handleClosePopup = () => {
+  //   localStorage.setItem("maintenancePopupShown", "true");
+  //   setShowPopup(false);
+  // };
 
   return (
     <>
-      {showPopup && (
+      {/* {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm">
           <div className="bg-[#0f0f0f] border border-blue-500 max-w-md mx-auto p-6 rounded-2xl shadow-2xl text-center space-y-4 animate-fade-in">
             <h2 className="text-2xl font-extrabold text-blue-500">Scheduled Maintenance</h2>
@@ -51,7 +51,7 @@ export default function App({ Component, pageProps }: AppProps) {
             </button>
           </div>
         </div>
-      )}
+      )} */}
 
 
       <Navbar />
