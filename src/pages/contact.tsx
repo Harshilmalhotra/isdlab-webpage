@@ -132,8 +132,8 @@ export default function Contact() {
               +91 90033 22060
             </a><br/>
             <strong>Email:</strong>{" "}
-            <a href="mailto:isdlab@srmist.edu.in" className="underline hover:text-blue-400">
-              isdlab@srmist.edu.in
+            <a href="mailto:info@isdlabsrm.in" className="underline hover:text-blue-400">
+              info@isdlabsrm.in
             </a>
           </p>
         </div>
