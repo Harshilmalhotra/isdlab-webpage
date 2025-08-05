@@ -13,7 +13,7 @@ export default function EventPage() {
     if (!event) return <p className="text-white p-8">Event not found.</p>;
 
     // Function to format a single date or range
-    const formatDate = (dateString: string) => {
+    const formatDate = (dateString: string): string => {
         if (dateString.includes("to")) {
             const [start, end] = dateString.split(" to ");
             return `${formatDate(start)} to ${formatDate(end)}`;
