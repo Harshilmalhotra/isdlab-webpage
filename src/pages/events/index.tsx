@@ -19,11 +19,19 @@ type Event = {
 export default function Events() {
   const now = new Date();
 
+  const parseDate = (date: string): Date => {
+    if (date.includes("to")) {
+      const [, end] = date.split(" to ");
+      return parseISO(end.trim());
+    }
+    return parseISO(date);
+  };
+
   const upcomingEvents = eventsData.filter((event: Event) =>
-    isAfter(parseISO(event.date), now)
+    isAfter(parseDate(event.date), now)
   );
   const pastEvents = eventsData.filter((event: Event) =>
-    !isAfter(parseISO(event.date), now)
+    !isAfter(parseDate(event.date), now)
   );
 
   return (
