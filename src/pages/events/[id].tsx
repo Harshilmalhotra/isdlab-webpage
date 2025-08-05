@@ -96,9 +96,9 @@ export default function EventPage() {
                                 View on Map
                             </Link>
                         )}
-                        {(event as any).link && (
+                        {"link" in event && event.link && (
                             <Link
-                                href={(event as any).link}
+                                href={event.link}
                                 target="_blank"
                                 className="inline-block px-6 py-2 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition"
                             >
