@@ -20,5 +20,25 @@
       ],
       "mapLink": "https://maps.app.goo.gl/5JjrcoDtyzmg6jg77"
     }
-  ]
-  
+    ,
+  {
+    "id": "robo-workshop-2025",
+    "title": "Robo Workshop 2025",
+    "date": "2025-07-19",
+    "location": "Tech Park 1, SRM Institute of Science and Technology",
+    "shortDescription": "A robotics workshop for school students featuring hands-on training with Smorphi kits.",
+    "coverImage": "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/refs/heads/main/robo-workshop-2025/IMG-20250805-WA0022.jpg",
+    "gallery": [
+      "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/refs/heads/main/robo-workshop-2025/IMG-20250805-WA0022.jpg",
+      "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/refs/heads/main/robo-workshop-2025/IMG-20250805-WA0025.jpg",
+      "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/refs/heads/main/robo-workshop-2025/IMG-20250805-WA0026.jpg"
+    ],
+    "content": [
+      "The Robo Workshop 2025, held on 19th July 2025 at Tech Park 1, SRM Institute of Science and Technology, brought together 50+ students from over 5 schools for an exciting introduction to robotics and hands-on hardware development.",
+      "Participants received guided training on Smorphi robotics kits—modular, open-source platforms ideal for rapid prototyping. They learned about the fundamentals of robotic systems and engaged in assembling and programming their own robots using the provided kits.",
+      "The Smorphi platform enabled students to test algorithms and simulate payloads in real-time, fostering creativity and engineering thinking. This experience bridged the gap between theoretical learning and practical application, and provided a glimpse into modern prototyping practices used in industry.",
+      "The workshop concluded with interactive challenges where teams presented their Smorphi builds and demonstrated various robotic tasks, encouraging teamwork, problem-solving, and innovation among young learners."
+    ],
+    "mapLink": "https://maps.app.goo.gl/7u3rj6CviJr6kaTd9"
+  }
+]
