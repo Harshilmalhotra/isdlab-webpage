@@ -63,7 +63,10 @@ export default function Events() {
 
 function EventCard({ event }: { event: Event }) {
   return (
-    <div className="bg-black rounded-xl shadow-lg shadow-blue-500/20 border border-blue-500/30 overflow-hidden transition hover:shadow-blue-500/40">
+    <Link
+      href={`/events/${event.id}`}
+      className="block bg-black rounded-xl shadow-lg shadow-blue-500/20 border border-blue-500/30 overflow-hidden transition hover:shadow-blue-500/40"
+    >
       <div className="relative w-full h-48">
         <Image
           src={event.coverImage}
@@ -76,13 +79,7 @@ function EventCard({ event }: { event: Event }) {
         <h3 className="text-xl font-bold mb-1">{event.title}</h3>
         <p className="text-blue-300 text-sm mb-1">{event.location}</p>
         <p className="text-white text-sm mb-3">{event.shortDescription}</p>
-        <Link
-          href={`/events/${event.id}`}
-          className="text-blue-400 hover:underline"
-        >
-          Learn more →
-        </Link>
       </div>
-    </div>
+    </Link>
   );
 }

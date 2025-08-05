@@ -40,5 +40,93 @@
       "The workshop concluded with interactive challenges where teams presented their Smorphi builds and demonstrated various robotic tasks, encouraging teamwork, problem-solving, and innovation among young learners."
     ],
     "mapLink": "https://maps.app.goo.gl/7u3rj6CviJr6kaTd9"
+  },
+
+  
+  
+  {
+    "id": "robofest-2025",
+    "title": "RoboFest 2025",
+    "date": "2025-09-10 to 2025-09-12",
+    "location": "SRM Institute of Science and Technology",
+    "shortDescription": "SRMIST’s premier robotics and innovation festival, showcasing the best in robotics, AI, and automation through competitions, exhibitions, and technical challenges.",
+    "coverImage": "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/refs/heads/main/robofest/Screenshot%202025-08-05%20195902.png",
+    "gallery": [
+    "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/refs/heads/main/robofest/Screenshot%202025-08-05%20195902.png",
+    "https://raw.githubusercontent.com/Intelligent-Systems-Design-Lab-SRM/webpage-assets-cdn/refs/heads/main/robofest/Screenshot%202025-08-05%20195902.png"  
+  ],
+    "link": "https://robofest.isdlabsrm.in/",
+    "content": [
+      "RoboFest is SRMIST’s flagship robotics and innovation event, attracting students and professionals from across the nation. Over three days of high-voltage tech battles, workshops, and showcases, RoboFest celebrates the spirit of engineering and creation.",
+      "Participants compete in high-stakes robotics challenges like Robo Wars, Line Followers, and Drone Racing. The event aims to nurture problem-solving, teamwork, and innovation through real-world robotics applications.",
+      "From beginners to seasoned robotics teams, RoboFest offers something for every innovator."
+    ],
+    "mapLink": "https://maps.app.goo.gl/Nq3QgWpVpH9dvLPg6",
+    "subEvents": [
+      {
+        "name": "Robo Wars",
+        "description": "High-intensity arena battles between custom-built robots designed for combat.",
+        "venue": "Tech Park 2 - Activity Hall 1",
+        "prizePool": "₹40,000",
+        "entryFee": "₹500",
+        "teamSize": "4",
+        "status": "Coming Soon",
+        "registerLink": "https://robofest.isdlabsrm.in/"
+      },
+      {
+        "name": "Robo Soccer",
+        "description": "Autonomous robots compete in strategic soccer matches.",
+        "venue": "Tech Park 2 - Activity Hall 1",
+        "prizePool": "₹40,000",
+        "entryFee": "₹500",
+        "teamSize": "4",
+        "status": "Register Now",
+        "registerLink": "https://robofest.isdlabsrm.in/"
+      },
+      {
+        "name": "Robo Sumo",
+        "description": "Traditional sumo wrestling adapted for autonomous robots.",
+        "venue": "Tech Park 2 - Activity Hall 1",
+        "prizePool": "₹25,000",
+        "entryFee": "₹500",
+        "teamSize": "4",
+        "status": "Register Now",
+        "registerLink": "https://robofest.isdlabsrm.in/"
+      },
+      {
+        "name": "Line Follower",
+        "description": "Precision navigation challenge following complex paths.",
+        "venue": "Tech Park 2 - Activity Hall 2",
+        "prizePool": "₹15,000",
+        "entryFee": "₹500",
+        "teamSize": "4",
+        "status": "Register Now",
+        "registerLink": "https://robofest.isdlabsrm.in/"
+      },
+      {
+        "name": "OBS Race",
+        "description": "Navigate through complex obstacle courses autonomously.",
+        "venue": "Milka Sports Ground",
+        "prizePool": "₹20,000",
+        "entryFee": "₹500",
+        "teamSize": "4",
+        "status": "Register Now",
+        "registerLink": "https://robofest.isdlabsrm.in/"
+      },
+      {
+        "name": "Drone Race",
+        "description": "High-speed aerial racing with autonomous navigation.",
+        "venue": "Milka Sports Ground",
+        "prizePool": "₹50,000",
+        "entryFee": "₹700",
+        "teamSize": "4",
+        "status": "Register Now",
+        "registerLink": "https://robofest.isdlabsrm.in/"
+      }
+    ]
   }
+
+
+
+
 ]
