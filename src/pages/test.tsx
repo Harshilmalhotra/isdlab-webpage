@@ -1,22 +1,45 @@
-import DarkVeil from '@/components/DarkVeil';
+import ProfileCard from '@/components/ProfileCard';
 
 export default function TestPage() {
     return (
         <div className="min-h-screen flex items-center justify-center">
-            <div style={{ width: '100%', height: '600px', position: 'relative' }}>
-                <DarkVeil
-                    hueShift={5}             // shifts hue by 45 degrees
-                    noiseIntensity={0}      // adds a bit of grain
-                    scanlineIntensity={0}   // subtle scanlines
-                    speed={1}               // animation speed
-                    scanlineFrequency={0}     // frequency of scanlines
-                    warpAmount={2}          // mild warp distortion
-                    resolutionScale={1}     // render at higher resolution
-                />
-                <div className="absolute inset-0 flex items-center justify-center">
-                    <h1 className="text-4xl font-bold text-white">Test Page</h1>
-                </div>
-            </div>
+            {/* <ProfileCard
+        avatarUrl="people/hm.png"
+        iconUrl="people/1.jpg"
+        grainUrl="public/grain/1.png"
+        // behindGradient={undefined}
+        // innerGradient={undefined}
+        // showBehindGradient={true}
+        className=""
+        enableTilt={true}
+        enableMobileTilt={false}
+        mobileTiltSensitivity={5}
+        miniAvatarUrl={undefined}
+        name="Harshil Malhotra"
+        title="full-stack developer"
+        handle="harshilmalhotra"
+        status="Online"
+        contactText="Contact Me"
+        showUserInfo={true}
+        onContactClick={() => console.log('Contact clicked')}
+      /> */}
+
+
+
+            <ProfileCard
+             name="Harshil Malhotra"
+                title="full-stack developer"
+                handle="harshilmalhotra"
+                status="Online"
+                contactText="Contact Me"
+                avatarUrl="/people/hm.png"
+                showUserInfo={true}
+                enableTilt={true}
+                enableMobileTilt={false}
+               onContactClick={() =>
+          window.open('https://www.linkedin.com/in/harshilmalhotra/', '_blank')
+        }
+            />
         </div>
     );
 }
