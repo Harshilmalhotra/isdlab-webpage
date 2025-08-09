@@ -56,7 +56,7 @@ export default function Team() {
       name: "Shivam Bansal",
       role: "President",
       email: "sb2368@srmist.edu.in",
-      image: "/people/100.jpg",
+      image: "/people/shivam.jpg",
       linkedin: "https://www.linkedin.com/in/shivambansal007/",
       github: "https://github.com/ShivamBansal07",
       // website: "https://shivambansal.com",

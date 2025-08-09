@@ -127,16 +127,16 @@ export default function Footer() {
 
         {/* Copyright and credits section */}
         <div className="text-center text-sm text-gray-400">
-          <p>© {currentYear} ISD Lab, SRM Institute of Scoence and Technology, Kattankulathur. All rights reserved.</p>
+          <p>© {currentYear} ISD Lab, SRM Institute of Science and Technology, Kattankulathur. All rights reserved.</p>
           <p className="mt-4 pt-3 border-t border-gray-800 text-s text-gray-500">
-            <a
+            {/* <a
               href="https://www.linkedin.com/in/harshilmalhotra/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition"
-            >
-              Created and hosted on testserver/azure/ap-south-1/Harshil Malhotra
-            </a>
+            > */}
+              Created with ❤️ by Harshil Malhotra
+            {/* </a> */}
           </p>
         </div>
       </div>
