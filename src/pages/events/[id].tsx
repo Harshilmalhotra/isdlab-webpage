@@ -86,12 +86,12 @@ export default function EventPage() {
                     <p className="text-lg text-gray-300 mb-8">{event.shortDescription}</p>
 
                     {/* Optional Links */}
-                    <div className="mb-8 space-y-4">
+                    <div className="mb-8 flex space-x-6">
                         {event.mapLink && (
                             <Link
                                 href={event.mapLink}
                                 target="_blank"
-                                className="inline-block px-6 py-2 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-700 transition"
+                                className="inline-block px-6 py-2 bg-blue-800 text-white rounded-full shadow-lg hover:bg-blue-700 transition"
                             >
                                 View on Map
                             </Link>
@@ -100,7 +100,7 @@ export default function EventPage() {
                             <Link
                                 href={event.link}
                                 target="_blank"
-                                className="inline-block px-6 py-2 bg-green-600 text-white rounded-full shadow-lg hover:bg-green-700 transition"
+                                className="inline-block px-6 py-2 bg-green-800 text-white rounded-full shadow-lg hover:bg-green-700 transition"
                             >
                                 Event Link
                             </Link>
