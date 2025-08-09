@@ -51,7 +51,7 @@ export default async function handler(
       id: f.id,
       name: f.name,
       thumb: f.thumbnailLink,
-      full: `/api/proxy?url=${encodeURIComponent(`https://drive.google.com/uc?export=view&id=${f.id}`)}`, // Proxy the full-resolution image
+      full: `https://drive.google.com/uc?export=view&id=${f.id}` // Direct Google Drive link for full-res image
     }));
 
     console.log(images);

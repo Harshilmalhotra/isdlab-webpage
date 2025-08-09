@@ -1,6 +1,6 @@
 import { useRef, useState, useEffect } from "react";
 import Image from "next/image"; // Keep the import as we will use it
-
+import DarkVeil from '@/components/DarkVeil';
 export default function IndustryCoursesPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [offsetY, setOffsetY] = useState(0);
@@ -62,21 +62,33 @@ export default function IndustryCoursesPage() {
       />
 
       {/* Main Content */}
-      <section className="relative h-[90vh] sm:h-[95vh] flex flex-col justify-center items-center text-center px-6 sm:px-12">
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black bg-opacity-60 z-0" />
-
-        {/* Content */}
-        <div className="relative z-10 max-w-3xl">
-          <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 drop-shadow-md">
-            Initiatives
-          </h1>
-          <p className="text-lg sm:text-xl text-gray-300">
-            Explore our industry-collaborative programs bridging academia with real-world innovation.
-            From embedded systems and PCB design to cloud-native development—equip yourself with in-demand skills.
-          </p>
-        </div>
-      </section>
+<section className="relative w-screen h-[90vh] sm:h-[95vh] flex flex-col justify-center items-center text-center p-0 m-0 overflow-x-hidden">
+  <div style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100%', minHeight: '100%', zIndex: 0 }}>
+    <div style={{ width: '100%', height: '100%' }}>
+      <DarkVeil
+        hueShift={5}
+        noiseIntensity={0}
+        scanlineIntensity={0}
+        speed={1}
+        scanlineFrequency={0}
+        warpAmount={2}
+        resolutionScale={1}
+      />
+    </div>
+  </div>
+  {/* Overlayed Content */}
+  <div className="absolute inset-0 flex flex-col justify-center items-center z-10">
+    <div className="w-full text-center">
+      <h1 className="text-4xl sm:text-6xl font-bold text-white mb-4 drop-shadow-md text-center">
+        Initiatives
+      </h1>
+      <p className="text-lg sm:text-xl text-gray-300 w-10/12 mx-auto text-center">
+        Explore our industry-collaborative programs bridging academia with real-world innovation.
+        From embedded systems and PCB design to cloud-native development—equip yourself with in-demand skills.
+      </p>
+    </div>
+  </div>
+</section>
 
       <nav className="sticky top-15 bg-black z-50 shadow-md border-b border-gray-700">
         <ul className="flex justify-center space-x-6 py-4 mt-2">
@@ -94,82 +106,87 @@ export default function IndustryCoursesPage() {
       </nav>
 
       <style jsx global>{`
-        html {
+        html, body {
           scroll-padding-top: 80px;
+          overflow-x: hidden;
+          max-width: 100vw;
         }
       `}</style>
 
-      {courses.map((course) => {
-        const showArrows = course.images.length > 4;
+      {
+        courses.map((course) => {
+          const showArrows = course.images.length > 4;
 
-        return (
-          <section
-            key={course.id}
-            id={course.id}
-            className="py-16 px-6 sm:px-12 max-w-6xl mx-auto border-b border-gray-800"
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">{course.title}</h2>
-            <p className="text-gray-300 text-md sm:text-lg mb-6">{course.description}</p>
+          return (
+            <section
+              key={course.id}
+              id={course.id}
+              className="py-16 px-6 sm:px-12 max-w-6xl mx-auto border-b border-gray-800"
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold mb-4">{course.title}</h2>
+              <p className="text-gray-300 text-md sm:text-lg mb-6">{course.description}</p>
 
-            <div className="relative">
-              {showArrows && (
-                <button
-                  onClick={() => scrollImages(course.id, "left")}
-                  className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 hover:bg-opacity-100 p-2 rounded-full z-10"
+              <div className="relative">
+                {showArrows && (
+                  <button
+                    onClick={() => scrollImages(course.id, "left")}
+                    className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 hover:bg-opacity-100 p-2 rounded-full z-10"
+                  >
+                    ◀
+                  </button>
+                )}
+
+                <div
+                  ref={(el) => {
+                    scrollContainerRefs.current[course.id] = el;
+                  }}
+                  className={`flex gap-4 flex-wrap ${showArrows ? "overflow-x-auto" : "overflow-x-visible"
+                    } no-scrollbar scroll-smooth px-2`}
                 >
-                  ◀
-                </button>
-              )}
+                  {course.images.map((imgSrc, i) => (
+                    <div key={i} className="relative w-40 h-40 sm:w-60 sm:h-60">
+                      <Image
+                        src={imgSrc}
+                        alt={`${course.title} image ${i + 1}`}
+                        fill
+                        className="rounded-lg object-cover shadow-md cursor-zoom-in transition-transform duration-200 hover:scale-105"
+                        onClick={() => setSelectedImage(imgSrc)}
+                      />
+                    </div>
+                  ))}
+                </div>
 
-              <div
-                ref={(el) => {
-                  scrollContainerRefs.current[course.id] = el;
-                }}
-                className={`flex gap-4 flex-wrap ${
-                  showArrows ? "overflow-x-auto" : "overflow-x-visible"
-                } no-scrollbar scroll-smooth px-2`}
-              >
-                {course.images.map((imgSrc, i) => (
-                  <div key={i} className="relative w-40 h-40 sm:w-60 sm:h-60">
-                    <Image
-                      src={imgSrc}
-                      alt={`${course.title} image ${i + 1}`}
-                      fill
-                      className="rounded-lg object-cover shadow-md cursor-zoom-in transition-transform duration-200 hover:scale-105"
-                      onClick={() => setSelectedImage(imgSrc)}
-                    />
-                  </div>
-                ))}
+                {showArrows && (
+                  <button
+                    onClick={() => scrollImages(course.id, "right")}
+                    className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 hover:bg-opacity-100 p-2 rounded-full z-10"
+                  >
+                    ▶
+                  </button>
+                )}
               </div>
-
-              {showArrows && (
-                <button
-                  onClick={() => scrollImages(course.id, "right")}
-                  className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 bg-opacity-70 hover:bg-opacity-100 p-2 rounded-full z-10"
-                >
-                  ▶
-                </button>
-              )}
-            </div>
-          </section>
-        );
-      })}
+            </section>
+          );
+        })
+      }
 
       {/* Image Modal */}
-      {selectedImage && (
-        <div
-          className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
-          onClick={() => setSelectedImage(null)}
-        >
-          <Image
-            src={selectedImage}
-            alt="Zoomed"
-            width={1000}
-            height={1000}
-            className="max-w-[90%] max-h-[90%] object-contain cursor-zoom-out"
-          />
-        </div>
-      )}
-    </div>
+      {
+        selectedImage && (
+          <div
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50"
+            onClick={() => setSelectedImage(null)}
+          >
+            <Image
+              src={selectedImage}
+              alt="Zoomed"
+              width={1000}
+              height={1000}
+              className="max-w-[90%] max-h-[90%] object-contain cursor-zoom-out"
+            />
+          </div>
+        )
+      }
+    </div >
   );
 }
