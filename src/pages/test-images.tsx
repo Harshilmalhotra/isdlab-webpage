@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 interface ImageData {
   id: string;
@@ -23,7 +24,7 @@ export default function TestImages() {
         } else {
           setError(data.error || "Unknown error");
         }
-      } catch (err) {
+      } catch {
         setError("Failed to fetch images");
       } finally {
         setLoading(false);
@@ -43,11 +44,13 @@ export default function TestImages() {
       ) : (
         <div style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
           {images.map((img) => (
-            <img
+            <Image
               key={img.id}
               src={img.thumb}
               alt={img.name}
-              style={{ width: "150px", height: "150px", objectFit: "cover" }}
+              width={150}
+              height={150}
+              style={{ objectFit: "cover" }}
             />
           ))}
         </div>

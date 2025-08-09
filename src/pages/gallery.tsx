@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import EnhancedMasonry from "@/components/EnhancedMasonry";
-import "../styles/MasonryAnimation.css";
 
 interface ImageData {
   id: string;
@@ -68,10 +68,13 @@ export default function GalleryPage() {
             ×
           </button>
           <div className="max-w-[90%] max-h-[90%]" onClick={e => e.stopPropagation()}>
-            <img
+            <Image
               src={selectedImage}
               alt="Full view"
+              width={1200}
+              height={900}
               className="max-w-full max-h-[90vh] object-contain"
+              style={{ objectFit: 'contain' }}
               onError={() => console.error("Failed to load image:", selectedImage)}
             />
           </div>

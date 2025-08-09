@@ -18,7 +18,7 @@ export default function Maintainence() {
   }, [isAuthenticated]);
 
   const handlePinSubmit = () => {
-    const correctPin = "1234";
+    const correctPin = "2023";
     if (pin === correctPin) {
       setShowSuccess(true);
       setTimeout(() => {
@@ -37,9 +37,8 @@ export default function Maintainence() {
       circles.push(
         <motion.div
           key={i}
-          className={`w-4 h-4 mx-2 rounded-full border-2 ${
-            pin[i] ? "bg-blue-500 border-blue-500" : "border-gray-500"
-          }`}
+          className={`w-4 h-4 mx-2 rounded-full border-2 ${pin[i] ? "bg-blue-500 border-blue-500" : "border-gray-500"
+            }`}
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
           transition={{ duration: 0.2 }}
@@ -59,9 +58,8 @@ export default function Maintainence() {
           exit={{ opacity: 0 }}
         >
           <motion.div
-            className={`bg-gray-900 p-8 rounded-xl shadow-2xl text-center w-full max-w-sm relative ${
-              shake ? "animate-shake" : ""
-            }`}
+            className={`bg-gray-900 p-8 rounded-xl shadow-2xl text-center w-full max-w-sm relative ${shake ? "animate-shake" : ""
+              }`}
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
@@ -144,24 +142,26 @@ export default function Maintainence() {
         }}
       >
         {[
-          { label: "Open CMS", action: () => router.push("/cms") },
+          { label: "Open CMS", action: () => alert("This tool is under development.") },
           { label: "Attendance", action: () => router.push("/attendance") },
           {
-            label: "Know the Developer",
-            action: () => window.open("https://www.linkedin.com/in/harshilmalhotra/", "_blank")
+            label: "Gallery Update",
+            action: () => window.open("https://drive.google.com/drive/folders/1fVUVF6IpyuZG70v9gIrmizPtRikSKNWP", "_blank")
           },
-          {
-            label: "Know the Designer",
-            action: () => window.open("https://www.linkedin.com/in/ayushk277/", "_blank")
-          },
-          {
-            label: "Additional Tool 1",
+            {
+            label: "Events Update",
             action: () => alert("This tool is under development.")
           },
-          {
-            label: "Additional Tool 2",
-            action: () => alert("This tool is under development.")
-          }
+          // {
+          //   label: "Know the Developer",
+          //   action: () => window.open("https://www.linkedin.com/in/harshilmalhotra/", "_blank")
+          // },
+          // {
+          //   label: "Know the Designer",
+          //   action: () => window.open("https://www.linkedin.com/in/ayushk277/", "_blank")
+          // }
+
+        
         ].map((tool, i) => (
           <motion.button
             key={i}
@@ -177,6 +177,16 @@ export default function Maintainence() {
           </motion.button>
         ))}
       </motion.div>
+
+      For any issues or suggestions, please contact the developer at{" "}
+      <a
+        href="https://www.linkedin.com/in/harshilmalhotra/"
+        className="text-blue-500 hover:underline"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        https://www.linkedin.com/in/harshilmalhotra/
+      </a>
     </motion.div>
   );
 }

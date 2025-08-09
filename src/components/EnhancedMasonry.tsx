@@ -3,6 +3,7 @@ import Box from '@mui/material/Box';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 import { useTheme, useMediaQuery } from '@mui/material';
+import Image from 'next/image';
 
 interface ImageItem {
   id: string;
@@ -75,14 +76,17 @@ const EnhancedMasonry: React.FC<MasonryGalleryProps> = ({ images, onImageClick }
               }
             }}
           >
-            <img
+            <Image
               src={item.thumb}
               alt={item.name}
+              width={300}
+              height={300}
               loading="lazy"
               onLoad={() => handleImageLoad(item.id)}
               style={{
                 display: 'block',
                 width: '100%',
+                height: 'auto',
                 transition: 'transform 0.5s ease, opacity 0.3s ease-in-out',
                 opacity: imagesLoaded[item.id] ? 1 : 0
               }}

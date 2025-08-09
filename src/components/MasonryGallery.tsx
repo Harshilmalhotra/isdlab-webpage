@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback, useRef } from "react";
+
 import styles from "../styles/MasonryGallery.module.css";
 import { gsap } from "gsap";
 import Image from "next/image";
@@ -16,10 +17,9 @@ export default function MasonryGallery() {
   const [loading, setLoading] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [allImagesLoaded, setAllImagesLoaded] = useState(false);
-  const [aspectRatios, setAspectRatios] = useState<Record<string, number>>({});
+  // (Variables removed: aspectRatios, setAspectRatios, grid, setGrid)
   const [loaded, setLoaded] = useState<Record<string, boolean>>({});
   const [columns, setColumns] = useState(3);
-  const [grid, setGrid] = useState<any[]>([]);
   const masonryRef = useRef<HTMLDivElement>(null);
   
   // Function to resize and position grid items
@@ -65,12 +65,9 @@ export default function MasonryGallery() {
       };
     }).filter(Boolean);
     
-    // Apply layout with GSAP for smooth animation
-    setGrid(newGrid);
-    
+    // (Removed setGrid and grid usage)
     newGrid.forEach(item => {
       if (!item) return;
-      
       const element = container.querySelector(`[data-id="${item.id}"]`);
       if (element) {
         gsap.to(element, {
@@ -323,10 +320,13 @@ export default function MasonryGallery() {
             ×
           </button>
           <div className={styles.imageContainer}>
-            <img
+            <Image
               src={selectedImage}
               alt="Full view"
               className={styles.fullImage}
+              width={1200}
+              height={900}
+              style={{ objectFit: 'contain', maxWidth: '100%', maxHeight: '90vh' }}
               onError={() => console.error("Failed to load image:", selectedImage)}
             />
           </div>
