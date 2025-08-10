@@ -8,6 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import "../components/ProfileCard.css";
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();

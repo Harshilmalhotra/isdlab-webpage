@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useCallback, useMemo } from "react";
-import "./ProfileCard.css";
+// import "./ProfileCard.css";
 // import  "./ProfileCard.module.css";
 interface ProfileCardProps {
   avatarUrl: string;
