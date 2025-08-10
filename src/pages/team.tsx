@@ -43,7 +43,7 @@ export default function Team() {
     {
       name: "Mrs. Sangeeta",
       role: "Lab Technician",
-      // image: "/technician1.jpg",
+      image: "/people/Sangeeta.jpg",
       // linkedin: "https://www.linkedin.com/in/sangeeta",
       // website: "https://sangeeta.com",
 
