@@ -1,0 +1,10 @@
+# *
+User-agent: *
+Allow: /
+Disallow: /maintainence
+
+# Host
+Host: https://isdlabsrm.in
+
+# Sitemaps
+Sitemap: https://isdlabsrm.in/sitemap.xml
