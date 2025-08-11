@@ -41,7 +41,7 @@ module.exports = {
       },
     ],
     additionalSitemaps: [
-      "https://isdlabsrm.in/sitemap.xml",
+      "https://isdlabsrm.in/sitemap-0.xml",
     ],
     // Extra brand authority links for robots.txt
     additionalUrls: [

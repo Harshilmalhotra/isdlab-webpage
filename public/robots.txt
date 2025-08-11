@@ -8,3 +8,4 @@ Host: https://isdlabsrm.in
 
 # Sitemaps
 Sitemap: https://isdlabsrm.in/sitemap.xml
+Sitemap: https://isdlabsrm.in/sitemap-0.xml
