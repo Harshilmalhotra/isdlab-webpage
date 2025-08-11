@@ -9,6 +9,7 @@ import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import "../components/ProfileCard.css";
+import { Analytics } from "@vercel/analytics/next"
 
 export default function App({ Component, pageProps }: AppProps) {
   const router = useRouter();
@@ -55,7 +56,7 @@ export default function App({ Component, pageProps }: AppProps) {
         </div>
       )} */}
 
-
+     <Analytics />
       <Navbar />
       <AnimatePresence mode="wait" initial={false}>
         <motion.div
@@ -66,6 +67,7 @@ export default function App({ Component, pageProps }: AppProps) {
           transition={{ duration: 0.3 }}
           className="min-h-screen"
         >
+         
           <Component {...pageProps} />
         </motion.div>
       </AnimatePresence>
