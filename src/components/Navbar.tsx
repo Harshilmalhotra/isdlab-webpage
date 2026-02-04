@@ -14,13 +14,13 @@ export default function Navbar() {
         <div className="flex justify-between h-20 items-center">
           <div className="flex items-center mr-auto h-full">
             <Link href="/" className="flex items-center gap-2">
-            <Image
-  src="/logo.svg"
-  alt="ISD Lab Logo"
-  width={30}
-  height={30}
-  className="h-[70px] w-[70px]"
-/>
+              <Image
+                src="/logo.svg"
+                alt="ISD Lab Logo"
+                width={30}
+                height={30}
+                className="h-[70px] w-[70px]"
+              />
 
 
               <span className="text-lg font-bold">ISD Lab</span>
@@ -35,6 +35,16 @@ export default function Navbar() {
             {/* <li><Link href="/latest-news">Latest News</Link></li> */}
             <li><Link href="/gallery">Gallery</Link></li>
             <li><Link href="/contact">Contact Us</Link></li>
+            <li>
+              <a
+                href="https://forms.gle/vhiEA4ricRfKnvjJ6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-full transition-colors font-semibold"
+              >
+                Join Us
+              </a>
+            </li>
           </ul>
           <div className="md:hidden ml-auto">
             <button onClick={() => setIsOpen(!isOpen)}>
@@ -54,6 +64,17 @@ export default function Navbar() {
             {/* <li><Link href="/latest-news" onClick={() => setIsOpen(false)}>Latest News</Link></li> */}
             <li><Link href="/gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>
             <li><Link href="/contact" onClick={() => setIsOpen(false)}>Contact Us</Link></li>
+            <li>
+              <a
+                href="https://forms.gle/vhiEA4ricRfKnvjJ6"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setIsOpen(false)}
+                className="text-blue-500 font-bold"
+              >
+                Join Us
+              </a>
+            </li>
           </ul>
         </div>
       )}
