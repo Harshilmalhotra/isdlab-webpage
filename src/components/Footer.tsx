@@ -129,14 +129,14 @@ export default function Footer() {
         <div className="text-center text-sm text-gray-400">
           <p>© {currentYear} ISD Lab, SRM Institute of Science and Technology, Kattankulathur. All rights reserved.</p>
           <p className="mt-4 pt-3 border-t border-gray-800 text-s text-gray-500">
-            {/* <a
-              href="https://www.linkedin.com/in/harshilmalhotra/"
+             <a
+              href="https://harshilmalhotra.dev/?utm_source=isdlabsrm.in&utm_medium=referral&utm_campaign=credit_link"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-400 transition"
-            > */}
+            > 
               Created with ❤️ by Harshil Malhotra
-            {/* </a> */}
+        </a> 
           </p>
         </div>
       </div>
