@@ -37,6 +37,13 @@ export default function Team() {
       linkedin: "https://www.linkedin.com/in/sowmiya-b-40a0aa1a9/",
       website: "https://www.srmist.edu.in/faculty/b-sowmiya/",
     },
+    {
+      name: "Dr. Ida Seraphim B",
+      role: "Lab Incharge",
+      email: "idaserab@srmist.edu.in",
+      image: "/people/ida.png",
+      linkedin: "https://www.linkedin.com/in/idaseraphim/",
+    },
   ];
 
   const labTechnicians: TeamMember[] = [
@@ -50,24 +57,21 @@ export default function Team() {
     },
   ];
 
-  const presidentTeam: TeamMember[] = [
+  const boardMembers: TeamMember[] = [
     {
       id: 100,
       name: "Shivam Bansal",
-      role: "President",
+      role: "Founding President",
       email: "sb2368@srmist.edu.in",
       image: "/people/shivam.jpg",
       linkedin: "https://www.linkedin.com/in/shivambansal007/",
       github: "https://github.com/ShivamBansal07",
       // website: "https://shivambansal.com",
     },
-  ];
-
-  const studentTeam: TeamMember[] = [
     {
       id: 1,
       name: "Harshil Malhotra",
-      role: "Student Member",
+      role: "President",
       email: "hm3673@srmist.edu.in",
       image: "/people/1.jpg",
       linkedin: "https://www.linkedin.com/in/harshilmalhotra/",
@@ -77,12 +81,15 @@ export default function Team() {
     {
       id: 2,
       name: "Ashwinkumar A",
-      role: "Student Member",
+      role: "Vice President",
       image: "/people/2.jpg",
       email: "aa3106@srmist.edu.in",
       linkedin: "https://www.linkedin.com/in/ashwin-kumar-597341298",
       github: "https://github.com/Azhwin05",
     },
+  ];
+
+  const studentTeam: TeamMember[] = [
     {
       id: 3,
       name: "Keshav Gupta",
@@ -237,11 +244,16 @@ export default function Team() {
           </div>
         </section>
 
-        {/* President Team */}
+        {/* Board Members */}
         <section className="mb-12 text-center">
-          <h2 className="text-3xl font-semibold mb-6">President</h2>
-          <div className="flex flex-wrap justify-center gap-8">
-            {presidentTeam.map(renderCard)}
+          <h2 className="text-3xl font-semibold mb-6">Board Members</h2>
+          <div className="flex flex-col items-center gap-8">
+            <div className="flex flex-wrap justify-center gap-8">
+              {boardMembers.slice(0, 2).map((member, index) => renderCard(member, index))}
+            </div>
+            <div className="flex flex-wrap justify-center gap-8">
+              {boardMembers.slice(2).map((member, index) => renderCard(member, index + 2))}
+            </div>
           </div>
         </section>
 
